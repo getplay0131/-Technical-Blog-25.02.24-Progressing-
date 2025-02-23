@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="성장 욕구가 가파른 개발자로서 공부한 내용을 쉽게 풀어쓴 기술 개발자 블로그입니다.">
+    <meta name="keywords" content="개발, Java, Spring, 기술블로그">
+    <meta name="author" content="ZenJoyDev">
+
+    <!-- 사이트 소유권 확인 메타 태그 -->
+    <meta name="google-site-verification" content="[##_google_verification_##]">
+    <meta name="naver-site-verification" content="[##_naver_verification_##]">
+
+    <!-- Open Graph & Twitter Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="[##_title_##]">
+    <meta property="og:title" content="[##_page_title_##]">
+    <meta property="og:description" content="[##_meta_description_##]">
+    <meta property="og:image" content="[##_image_##]">
+    <meta property="og:url" content="[##_blog_url_##]">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[##_page_title_##]">
+    <meta name="twitter:description" content="[##_meta_description_##]">
+    <meta name="twitter:image" content="[##_image_##]">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery 충돌 방지 -->
+    <script>
+        var tjQuery = jQuery.noConflict(true);
+        window.jQuery = window.$ = tjQuery;
+    </script>
+
+    <!-- 티스토리 스크립트 -->
+    <script>
+        window.TistoryBlog = {
+            basePath: "",
+            url: "your-blog-url",
+            tistoryUrl: "your-tistory-url"
+        };
+    </script>
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            hljs.highlightAll();
+        });
+    </script>
+
+    <!-- 리소스 최적화 -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="./critical.css">
+    <link rel="stylesheet" href="./style.css" media="print" onload="this.media='all'">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/x-icon" href="[##_favicon_##]">
+
+    <title>[##_title_##]</title>
+</head>
+
+<body id="tt-body-page">
+    <!-- 페이지 로더 -->
+    <div id="page-loader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
+
+    <!-- 헤더 -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="[##_blog_link_##]" aria-label="홈으로 이동">
+                    [##_title_##]
+                </a>
+            </div>
+
+            <nav class="header-nav" role="navigation" aria-label="메인 메뉴">
+                <ul class="nav-list">
+                    <li><a href="[##_blog_link_##]" aria-current="page">홈</a></li>
+                    <li><a href="[##_blog_link_##]/category">카테고리</a></li>
+                    <li><a href="[##_blog_link_##]/guestbook">방명록</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-utils">
+                <button class="search-toggle" aria-label="검색창 열기">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+                <button class="theme-toggle" aria-label="테마 변경">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 검색 모달 -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-container">
+            <button class="search-close" aria-label="검색창 닫기">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <form class="search-form" action="/search">
+                <input type="search" name="q" class="search-input" placeholder="검색어를 입력하세요..." required>
+                <button type="submit" class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <main id="main-content" class="site-main page-content" role="main">
+        <!-- 페이지 헤더 -->
+        <header class="page-header">
+            <div class="container">
+                <h1 class="page-title">[##_article_title_##]</h1>
+            </div>
+        </header>
+
+        <!-- 페이지 본문 -->
+        <div class="page-body">
+            <div class="container">
+                <div class="content-wrapper">
+                    [##_article_content_##]
+                </div>
+
+                <!-- 방명록 영역 -->
+                <s_guest>
+                    <div class="guestbook">
+                        <div class="guestbook-write">
+                            [##_guestbook_input_##]
+                        </div>
+                        <div class="guestbook-list">
+                            [##_guestbook_list_##]
+                        </div>
+                    </div>
+                </s_guest>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2 class="footer-title">[##_title_##]</h2>
+                    <p class="footer-description">성장하는 개발자의 이야기를 공유합니다.</p>
+                </div>
+                <div class="footer-social">
+                    <h3 class="footer-social-title">소셜 미디어</h3>
+                    <div class="social-links">
+                        <a href="[##_github_##]" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 [##_title_##]. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="상단으로 이동">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="./script.js" defer></script>
+    <script src="./page.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+<!-- 개별 포스트 페이지지 -->
+!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="[##_article_summary_##]">
+    <meta name="keywords" content="[##_article_tag_##]">
+    <meta name="author" content="[##_blogger_##]">
+
+    <!-- Open Graph & Twitter Cards -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="[##_title_##]">
+    <meta property="og:title" content="[##_article_title_##]">
+    <meta property="og:description" content="[##_article_summary_##]">
+    <meta property="og:image" content="[##_article_rep_thumbnail_url_##]">
+    <meta property="og:url" content="[##_article_url_##]">
+    <meta property="article:published_time" content="[##_article_date_##]">
+    <meta property="article:modified_time" content="[##_article_modified_date_##]">
+    <meta property="article:author" content="[##_blogger_##]">
+    <meta property="article:tag" content="[##_article_tag_##]">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[##_article_title_##]">
+    <meta name="twitter:description" content="[##_article_summary_##]">
+    <meta name="twitter:image" content="[##_article_rep_thumbnail_url_##]">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery 충돌 방지 -->
+    <script>
+        var tjQuery = jQuery.noConflict(true);
+        window.jQuery = window.$ = tjQuery;
+    </script>
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            hljs.highlightAll();
+        });
+    </script>
+
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="./critical.css">
+    <link rel="stylesheet" href="./style.css" media="print" onload="this.media='all'">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/x-icon" href="[##_favicon_##]">
+
+    <title>[##_article_title_##] - [##_title_##]</title>
+
+    <style>
+        /* 포스트 특화 스타일 */
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .post-content h1,
+        .post-content h2,
+        .post-content h3 {
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .post-content pre {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .post-content code {
+            font-family: var(--font-family-code);
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 1rem;
+            border: 1px solid var(--bg-tertiary);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            resize: vertical;
+        }
+
+        .comment-form button {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .share-button {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .share-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+        }
+
+        .share-facebook {
+            background: #4267B2;
+        }
+
+        .share-link {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body id="tt-body-page">
+    <!-- 페이지 로더 -->
+    <div id="page-loader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
+
+    <!-- 헤더 -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="[##_blog_link_##]" aria-label="홈으로 이동">
+                    [##_title_##]
+                </a>
+            </div>
+
+            <nav class="header-nav" role="navigation" aria-label="메인 메뉴">
+                <ul class="nav-list">
+                    <li><a href="[##_blog_link_##]">홈</a></li>
+                    <li><a href="[##_blog_link_##]/category">카테고리</a></li>
+                    <li><a href="[##_blog_link_##]/guestbook">방명록</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-utils">
+                <button class="search-toggle" aria-label="검색창 열기">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+                <button class="theme-toggle" aria-label="테마 변경">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 검색 모달 -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-container">
+            <button class="search-close" aria-label="검색창 닫기">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <form class="search-form" action="/search">
+                <input type="search" name="q" class="search-input" placeholder="검색어를 입력하세요..." required>
+                <button type="submit" class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <main id="main-content" class="site-main post-content" role="main">
+        <article class="post-article">
+            <!-- 포스트 헤더 -->
+            <header class="post-header">
+                <div class="container">
+                    <div class="post-meta">
+                        <a href="[##_category_link_##]" class="post-category">[##_category_##]</a>
+                        <time class="post-date" datetime="[##_article_date_##]">[##_article_date_##]</time>
+                    </div>
+                    <h1 class="post-title">[##_article_title_##]</h1>
+                    <div class="post-info">
+                        <span class="post-author">by [##_article_author_##]</span>
+                        <span class="post-views">👀 [##_article_views_##]</span>
+                        <span class="post-comments">💬 [##_article_comment_count_##]</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 포스트 본문 -->
+            <div class="post-body">
+                <div class="container">
+                    <div class="post-content">
+                        [##_article_content_##]
+                    </div>
+
+                    <!-- 태그 -->
+                    <div class="post-tags">
+                        <s_tag_label>
+                            [##_tag_label_##]
+                        </s_tag_label>
+                    </div>
+
+                    <!-- 공유 버튼 -->
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/share?url=[##_article_url_##]&text=[##_article_title_##]"
+                            class="share-button share-twitter" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i> 트위터
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=[##_article_url_##]"
+                            class="share-button share-facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook"></i> 페이스북
+                        </a>
+                        <button class="share-button share-link" onclick="copyPostLink()">
+                            <i class="fas fa-link"></i> 링크 복사
+                        </button>
+                    </div>
+
+                    <!-- 이전/다음 글 -->
+                    <nav class="post-navigation">
+                        <div class="nav-links">
+                            <div class="nav-previous">
+                                [##_article_prev_##]
+                            </div>
+                            <div class="nav-next">
+                                [##_article_next_##]
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- 관련 포스트 -->
+                    <section class="related-posts">
+                        <h2 class="section-title">관련 포스트</h2>
+                        <div class="post-grid">
+                            [##_related_articles_##]
+                        </div>
+                    </section>
+
+                    <!-- 댓글 영역 -->
+                    <section class="comments-section">
+                        <h2 class="section-title">댓글</h2>
+
+                        <!-- 댓글 작성 폼 -->
+                        <div class="comment-form">
+                            [##_comment_write_##]
+                        </div>
+
+                        <!-- 댓글 목록 -->
+                        <div class="comment-list">
+                            [##_comment_list_##]
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2 class="footer-title">[##_title_##]</h2>
+                    <p class="footer-description">성장하는 개발자의 이야기를 공유합니다.</p>
+                </div>
+                <div class="footer-social">
+                    <h3 class="footer-social-title">소셜 미디어</h3>
+                    <div class="social-links">
+                        <a href="[##_github_##]" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 [##_title_##]. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="상단으로 이동">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="./script.js" defer></script>
+    <script src="./post.js" defer></script>
+    <script>
+        // 링크 복사 기능
+        function copyPostLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('링크가 복사되었습니다!');
+            }).catch(err => {
+                console.error('링크 복사 실패:', err);
+            });
+        }
+
+        // 코드 하이라이팅
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</body>
+
+</html>

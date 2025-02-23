@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="성장 욕구가 가파른 개발자로서 공부한 내용을 쉽게 풀어쓴 기술 개발자 블로그입니다.">
+  <meta name="keywords" content="개발, Java, Spring, 기술블로그">
+  <meta name="author" content="ZenJoyDev">
+
+  <!-- 사이트 소유권 확인 메타 태그 -->
+  <meta name="google-site-verification" content="[##_google_verification_##]">
+  <meta name="naver-site-verification" content="[##_naver_verification_##]">
+
+  <!-- Open Graph & Twitter Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="[##_title_##]">
+  <meta property="og:title" content="[##_page_title_##]">
+  <meta property="og:description" content="[##_meta_description_##]">
+  <meta property="og:image" content="[##_image_##]">
+  <meta property="og:url" content="[##_blog_url_##]">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[##_page_title_##]">
+  <meta name="twitter:description" content="[##_meta_description_##]">
+  <meta name="twitter:image" content="[##_image_##]">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- jQuery 충돌 방지 -->
+  <script>
+    var tjQuery = jQuery.noConflict(true);
+    window.jQuery = window.$ = tjQuery;
+  </script>
+
+  <!-- 티스토리 스크립트 -->
+  <script>
+    window.TistoryBlog = {
+      basePath: "",
+      url: "your-blog-url",
+      tistoryUrl: "your-tistory-url"
+    };
+  </script>
+
+  <!-- highlight.js -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      hljs.highlightAll();
+    });
+  </script>
+
+  <!-- 리소스 최적화 -->
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Critical CSS -->
+  <link rel="stylesheet" href="./critical.css">
+  <link rel="stylesheet" href="./style.css" media="print" onload="this.media='all'">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print"
+    onload="this.media='all'">
+
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/x-icon" href="[##_favicon_##]">
+
+  <title>[##_title_##]</title>
+</head>
+
+<body id="tt-body-[##_body_id_##]">
+  <!-- 페이지 로더 -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
+
+  <!-- 헤더 -->
+  <!-- 헤더 네비게이션 수정 -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="[##_blog_url_##]" aria-label="홈으로 이동">
+          [##_title_##]
+        </a>
+      </div>
+
+      <nav class="header-nav" role="navigation" aria-label="메인 메뉴">
+        <ul class="nav-list">
+          <li><a href="[##_blog_url_##]">홈</a></li>
+          <li><a href="[##_category_list_##]">카테고리</a></li>
+          <li><a href="[##_guestbook_link_##]">방명록</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-utils">
+        <button class="search-toggle" aria-label="검색창 열기">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+        <button class="theme-toggle" aria-label="테마 변경">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 컨텐츠 -->
+  <main id="main-content" class="site-main" role="main">
+    <!-- 검색 모달 -->
+    <div id="search-modal" class="search-modal">
+      <div class="search-container">
+        <button class="search-close" aria-label="검색창 닫기">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <!-- 티스토리 검색 폼으로 변경 -->
+        <s_search>
+          <form class="search-form" action="[##_search_url_##]" method="get">
+            <input type="search" name="search" class="search-input" value="[##_search_text_##]"
+              placeholder="검색어를 입력하세요..." required>
+            <button type="submit" class="search-submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </s_search>
+      </div>
+    </div>
+    <!-- 히어로 섹션 -->
+    <!-- 히어로 섹션 HTML -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-background">
+        <div id="particles-js" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge" role="text">I LOVE WHAT I DO</div>
+
+        <div class="hero-text-container">
+          <h1 id="hero-title" class="hero-heading">
+            Hello <span class="typing-text"></span>
+          </h1>
+
+          <div class="quote-container">
+            <!-- 여기에 명언이 동적으로 삽입됩니다 -->
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#stats-section" class="scroll-down-btn" aria-label="스크롤 다운">
+            <span class="scroll-arrow"></span>
+            <span class="scroll-text">Explore More</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 통계 섹션 -->
+    <section id="stats-section" class="stats-section">
+      <div class="container">
+        <h2 class="stats-title">여러분들의 방문을 진심으로 환영합니다</h2>
+        <p class="stats-description">WEB 개발에 있어 다양한 개발 지식을 다루는 전문적인 블로그가 되기 위해 노력하겠습니다.</p>
+
+        <div class="stats-grid">
+          <div class="stats-card">
+            <div class="stats-icon">👥</div>
+            <div class="stats-number" data-count="[##_count_total_##]">[##_count_total_##]</div>
+            <div class="stats-label">총 방문자</div>
+          </div>
+          <div class="stats-card">
+            <div class="stats-icon">📝</div>
+            <div class="stats-number" data-count="[##_count_post_##]">[##_count_post_##]</div>
+            <div class="stats-label">총 포스팅</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 카테고리 섹션 -->
+    <section class="category-section">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-badge">EXPLORE</span>
+          <h2 class="section-title">
+            인기있는 카테고리
+            <span class="title-emoji">👑</span>
+          </h2>
+          <p class="section-description">잘 정리된 다양한 카테고리를 둘러보세요</p>
+        </header>
+        <div class="category-grid">[##_category_list_##]</div>
+    </section>
+
+    <!-- 최신 글 섹션 HTML -->
+    <!-- 최신 글 섹션 -->
+    <section class="recent-posts">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-badge">LATEST</span>
+          <h2 class="section-title">
+            최신 글
+            <span class="title-emoji">✨</span>
+          </h2>
+          <p class="section-description">따끈따끈하게 올라온 최신 포스팅을 구경해보세요!</p>
+        </header>
+
+        <s_article_rep>
+          <div class="posts-grid">
+            <article class="post-card">
+              <a href="[##_article_rep_link_##]" class="post-link">
+                <s_article_rep_thumbnail>
+                  <div class="post-thumbnail">
+                    <img src="[##_article_rep_thumbnail_url_##]" alt="[##_article_rep_title_##]">
+                  </div>
+                </s_article_rep_thumbnail>
+                <div class="post-content">
+                  <div class="post-category">[##_article_rep_category_##]</div>
+                  <h2 class="post-title">[##_article_rep_title_##]</h2>
+                  <p class="post-excerpt">[##_article_rep_summary_##]</p>
+                  <div class="post-meta">
+                    <span class="post-date">[##_article_rep_date_##]</span>
+                    <span class="post-comments">💬 [##_article_rep_comment_count_##]</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+        </s_article_rep>
+
+        <!-- 게시글이 없을 때 표시될 내용 -->
+        <s_article_empty>
+          <div class="empty-state">
+            <div class="empty-icon">📝</div>
+            <p>아직 작성된 글이 없습니다.</p>
+          </div>
+        </s_article_empty>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <!-- 푸터 수정 -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2 class="footer-title">[##_title_##]</h2>
+          <p class="footer-description">성장하는 개발자의 이야기를 공유합니다.</p>
+        </div>
+        <!-- 카테고리 nav 부분 제거 -->
+        <div class="footer-social">
+          <h3 class="footer-social-title">소셜 미디어</h3>
+          <div class="social-links">
+            <a href="[##_github_##]" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 [##_title_##]. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="상단으로 이동">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script type="module" src="./BlogCore.js" defer></script>
+  <script type="module" src="./script.js" defer></script>
+</body>
+
+</html>

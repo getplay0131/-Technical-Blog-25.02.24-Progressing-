@@ -1,0 +1,74 @@
+/* critical.css */
+:root {
+  /* 색상 */
+  --color-primary: #3b82f6;
+  --color-secondary: #10b981;
+  --color-dark: #1f2937;
+  --color-light: #f3f4f6;
+
+  /* 기본 색상 */
+  --text-primary: var(--color-dark);
+  --text-secondary: #4b5563;
+  --bg-primary: #ffffff;
+  --bg-secondary: var(--color-light);
+
+  /* 여백 */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* 레이아웃 */
+  --header-height: 4rem;
+  --container-width: 1200px;
+  --border-radius: 0.5rem;
+}
+
+/* 기본 리셋 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", sans-serif;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+/* 기본 컨테이너 */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* 헤더 스타일 */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+/* 로더 */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}

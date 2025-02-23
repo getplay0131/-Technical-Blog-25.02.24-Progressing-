@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+    <information>
+        <name>ZenJoyDev Tech Blog Skin</name>
+        <version>1.0</version>
+        <description>기초에서 개발을 시작하여 즐기는 기록 블로그!</description>
+        <author>Your Name</author>
+    </information>
+    <variables>
+        <variable>
+            <name>mainColor</name>
+            <type>COLOR</type>
+            <title>메인 컬러</title>
+            <default>#007AFF</default>
+        </variable>
+        <variable>
+            <name>useTypingEffect</name>
+            <type>BOOL</type>
+            <title>타이핑 효과 사용</title>
+            <default>true</default>
+        </variable>
+    </variables>
+</skin>
